@@ -2,8 +2,20 @@
 
 [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node#readme) は plugin に含まれている extends を利用するだけで動くことを試す。
 
+lint 対象としてこのようなコードを用意する。
+
+```javascript:title=index.js
+exports = {
+  foo: 1,
+};
 ```
+
+これは eslint-plugin-node の`plugin:node/recommended` に含まれる[node/no-exports-assign](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-exports-assign.md)に弾かれるコードだ。
+
+```sh
 $ npx eslint index.js
+
+  1:1  error  Unexpected assignment to 'exports' variable. Use 'module.exports' instead  node/no-exports-assign
 ```
 
 rule も plugin も入れていないが、きちんと弾かれる。
@@ -80,7 +92,7 @@ module.exports = {
 
 ![例1: plugin node をコメントアウトする例1](./ex1.png)
 
-![例1: plugin node をコメントアウトする例2](./ex12png)
+![例1: plugin node をコメントアウトする例2](./ex2png)
 
 そして先ほどと同じように eslint コマンドを実行してみよう。
 
