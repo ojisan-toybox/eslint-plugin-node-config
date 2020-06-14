@@ -92,7 +92,7 @@ module.exports = {
 
 ![例1: plugin node をコメントアウトする例1](./ex1.png)
 
-![例1: plugin node をコメントアウトする例2](./ex2png)
+![例1: plugin node をコメントアウトする例2](./ex2.png)
 
 そして先ほどと同じように eslint コマンドを実行してみよう。
 
